@@ -1,0 +1,33 @@
+<div class="container">
+    <h1 class="display-3 text-center">Stack</h1>
+    <div class="input-group my-3">
+        <input type="text" class="form-control"
+                placeholder="Enter Value" aria-label="Enter Value"
+                aria-describedby="button-addon2"
+                #value>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary"
+                   type="button" id="button-addon2"
+                   (click)="push(value.value)">Push</button>
+          <button class="btn btn-outline-secondary"
+                  type="button" id="button-addon2"
+                  (click)="pop()">POP</button>
+        </div>
+      </div>
+      <div class="stack-container">
+          <button type="button"
+                  class="btn btn-primary value-circle"
+                  *ngFor="let el of stack.traverse();first as isFirst;last as isLast"
+                  [class.btn-success]="isFirst"
+                  [class.btn-danger]="isLast">{{el}}</button>
+      </div>
+      <ul class="list-group">
+          <li class="list-group-item list-group-item-success">
+            <span class="font-weight-bold">{{stack.first.val}}</span>
+            is first item be served with green background</li>
+          <li class="list-group-item list-group-item-danger">
+            <span class="font-weight-bold">{{stack.last.val}}</span>
+             is last item be served with red background</li>
+          <li class="list-group-item">Size : <span class="font-weight-bold">{{stack.size}}</span></li>
+        </ul>
+</div>

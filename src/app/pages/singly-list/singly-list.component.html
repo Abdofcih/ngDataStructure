@@ -1,0 +1,83 @@
+<div class="container">
+  <h1 class="display-4  text-center">Singly Linked List</h1>
+  <div class="input-group my-3">
+      <input type="text" class="form-control"
+              placeholder="Enter Value" aria-label="Enter Value"
+              aria-describedby="button-addon2"
+              #value1>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary"
+                 type="button" id="button-addon2"
+                 (click)="push(value1.value)">Push</button>
+        <button class="btn btn-outline-secondary"
+                type="button" id="button-addon2"
+                (click)="pop()">POP</button>
+      </div>
+    </div>
+    <div class="input-group my-3">
+      <input type="text" class="form-control"
+              placeholder="Enter Value" aria-label="Enter Value"
+              aria-describedby="button-addon2"
+              #value2>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary"
+                 type="button" id="button-addon2"
+                 (click)="unshift(value2.value)">Unshift</button>
+        <button class="btn btn-outline-secondary"
+                type="button" id="button-addon2"
+                (click)="shift()">Shift</button>
+      </div>
+    </div>
+    <div class="input-group my-3">
+        <input type="text" class="form-control"
+                placeholder="Index" aria-label="Index"
+                aria-describedby="button-addon2"
+                #index>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary"
+                   type="button" id="button-addon2"
+                   (click)="get(index.value)">Get</button>
+          <button class="btn btn-outline-secondary"
+                  type="button" id="button-addon2"
+                  (click)="remove(index.value)">Remove</button>
+        </div>
+      </div>
+      <div class="input-group my-3">
+          <input type="text" class="form-control"
+                  placeholder="Index" aria-label="Index"
+                  aria-describedby="button-addon2"
+                  #index2>
+          <input type="text" class="form-control"
+                  placeholder="Value" aria-label="Value"
+                  aria-describedby="button-addon2"
+                  #value3>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary"
+                     type="button" id="button-addon2"
+                     (click)="get(index2.value,value3.value)">Set</button>
+            <button class="btn btn-outline-secondary"
+                    type="button" id="button-addon2"
+                    (click)="insert(index2.value,value3.value)">Insert</button>
+          </div>
+        </div>
+    <div class="list-container">
+         <span  *ngFor="let el of singlyLinkedList.traverse();first as isFirst;last as isLast">
+          <button type="button"
+          class="btn btn-primary value-circle"
+          [class.btn-success]="isFirst"
+          [class.btn-danger]="isLast">{{el}}</button>
+          <span class="arrow mx-2" *ngIf="!isLast">---&gt;</span>
+         </span>
+      </div>
+
+      <ul class="list-group">
+           <li class="list-group-item list-group-item-success" *ngIf="getValue">
+            <span class="font-weight-bold">{{getValue.val}}</span>
+             is Return value of get()</li>
+          <!-- <li class="list-group-item list-group-item-danger">
+            <span class="font-weight-bold">{{queue.last.val}}</span>
+            is last item be served with red background</li> -->
+          <li class="list-group-item">Size : <span class="font-weight-bold">{{singlyLinkedList.length}}</span></li>
+        </ul>
+</div>
+

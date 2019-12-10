@@ -1,3 +1,23 @@
+# Angular Data Structure
+
+### Hands on data structure with angular typescript
+
+ implementing and consuming data structure with typescript
+ 
+ [implementation!](https://github.com/Abdofcih/ngDataStructure/tree/master/src/app/DS-models)
+ 
+ ![Queue demo image](http://i.imgur.com/Gpb5pbJ.png)
+
+ * Stack
+ * Queue
+ * Priority Queue
+ * Singly Linked List
+ * Doubly Linked List
+ * Hash Table
+ * Binary Search Tree
+ * Max Binary Heap
+ * Graph
+
 # NgDataStructure
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.

@@ -1,0 +1,15 @@
+.queue-container{
+  border-width: 5px 0;
+  border-color: #007bff;
+  margin: 30px auto;
+  border-style: solid;
+  padding: 0 5px;
+  text-align: center;
+}
+
+.arrow{
+color: #007bff;
+font-weight: bold;
+border-width: 0px 1px 0px 0px;
+border-style: solid;
+}

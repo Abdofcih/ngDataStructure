@@ -1,0 +1,40 @@
+<div class="container">
+  <h1 class="display-3  text-center">Priority Queue</h1>
+  <div class="input-group my-3">
+      <input type="text" class="form-control"
+              placeholder=" Value" aria-label="Enter Value"
+              aria-describedby="button-addon2"
+              #value>
+              <input type="text" class="form-control"
+              placeholder="Priority" aria-label="Enter Value"
+              aria-describedby="button-addon2"
+              #priority>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary"
+                 type="button" id="button-addon2"
+                 (click)="enqueue(value.value,priority.value)">Enqueue</button>
+        <button class="btn btn-outline-secondary"
+                type="button" id="button-addon2"
+                (click)="dequeue()">Dequeue</button>
+      </div>
+    </div>
+    <div class="queue-container">
+         <span class="arrow mx-2">&lt;---</span>
+        <button type="button"
+                class="btn btn-primary value-circle"
+                *ngFor="let el of pq.traverse();first as isFirst"
+                [class.btn-success]="isFirst">{{el?.value}}</button>
+        <span class="arrow mx-2">&lt;---</span>
+      </div>
+      <ul class="list-group">
+
+          <li class="list-group-item list-group-item-info">
+            Do not worry about ordering of the last elements as I us binary heap - which has no implied ordering between siblings - to implement this
+           </li>
+          <li class="list-group-item list-group-item-success">
+            <span class="font-weight-bold">{{pq.traverse()[0]?.value}}</span>
+             is first item to be served with green background</li>
+          <li class="list-group-item">Size : <span class="font-weight-bold">{{pq.size()}}</span></li>
+        </ul>
+</div>
+

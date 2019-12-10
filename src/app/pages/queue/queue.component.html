@@ -1,0 +1,36 @@
+<div class="container">
+    <h1 class="display-3  text-center">Queue</h1>
+    <div class="input-group my-3">
+        <input type="text" class="form-control"
+                placeholder="Enter Value" aria-label="Enter Value"
+                aria-describedby="button-addon2"
+                #value>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary"
+                   type="button" id="button-addon2"
+                   (click)="enqueue(value.value)">Enqueue</button>
+          <button class="btn btn-outline-secondary"
+                  type="button" id="button-addon2"
+                  (click)="dequeue()">Dequeue</button>
+        </div>
+      </div>
+      <div class="queue-container">
+           <span class="arrow mx-2">&lt;---</span>
+          <button type="button"
+                  class="btn btn-primary value-circle"
+                  *ngFor="let el of queue.traverse();first as isFirst;last as isLast"
+                  [class.btn-success]="isFirst"
+                  [class.btn-danger]="isLast">{{el}}</button>
+          <span class="arrow mx-2">&lt;---</span>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-success">
+              <span class="font-weight-bold">{{queue.first.val}}</span>
+               is first item to be served with green background</li>
+            <li class="list-group-item list-group-item-danger">
+              <span class="font-weight-bold">{{queue.last.val}}</span>
+              is last item be served with red background</li>
+            <li class="list-group-item">Size : <span class="font-weight-bold">{{queue.size}}</span></li>
+          </ul>
+</div>
+

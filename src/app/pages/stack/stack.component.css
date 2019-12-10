@@ -1,0 +1,10 @@
+.stack-container{
+  border-width: 0 5px 5px 5px;
+    border-color: #007bff;
+    margin: 30px auto;
+    border-style: solid;
+    width: 55px;
+    padding: 0 5px;
+    text-align: center;
+
+}
