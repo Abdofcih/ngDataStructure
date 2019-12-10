@@ -20,6 +20,6 @@ export class StackComponent implements OnInit {
 
   }
   push(val){this.stack.push(val)}
-  pop(val){this.stack.pop()}
+  pop(){this.stack.pop()}
 
 }
